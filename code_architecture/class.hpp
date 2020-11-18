@@ -28,7 +28,7 @@ class personnel : appli
         virtual void supprimer(void);
         virtual void afficher(void);
         
-};
+};  
 
 class client : appli
 {
@@ -93,6 +93,12 @@ class stock : appli
     int quantite;
     int seuil_reaprovisionnement;
     int taux_tva;
+
+    public:
+        virtual void creer(void);
+        virtual void modifier(void);
+        virtual void supprimer(void);
+        virtual void afficher(void);
 };
 
 

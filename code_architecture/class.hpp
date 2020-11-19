@@ -21,6 +21,7 @@ class personnel : appli
     string prenom;
     #define __DATE__ date;
     string superieurh;
+    string adresse;
 
     public:
         virtual void creer(void);
@@ -32,7 +33,7 @@ class personnel : appli
 
 class client : appli
 {
-    private:
+    protected:
         string adresse_livraison;
         string adresse_facturation;
         int numero_client;
@@ -72,7 +73,7 @@ class commande : appli
         
 };
 
-class facture : commande
+class facture : commande , client
 {
     private:
     string nom_societe;
@@ -88,7 +89,7 @@ class stock : appli
 {
     private:
     int prix_ht;
-    int reference;
+    int reference_article_stock;
     string designation;
     int quantite;
     int seuil_reaprovisionnement;
@@ -100,5 +101,6 @@ class stock : appli
         virtual void supprimer(void);
         virtual void afficher(void);
 };
+
 
 

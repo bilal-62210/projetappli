@@ -40,6 +40,7 @@ class client : appli
          string nom;
          string prenom;
         #define __DATE__ date;
+        float remise;
     public:
         virtual void creer(void);
         virtual void modifier(void);
@@ -88,12 +89,12 @@ class stock : appli
 
 {
     private:
-    int prix_ht;
+    float prix_ht;
     int reference_article_stock;
     string designation;
     int quantite;
     int seuil_reaprovisionnement;
-    int taux_tva;
+    float taux_tva;
 
     public:
         virtual void creer(void);
@@ -102,5 +103,17 @@ class stock : appli
         virtual void afficher(void);
 };
 
-
+class stats : personnel,commande,stock,client
+{
+    public:
+        void panier_moyen(float);
+        void chiffre_affaire(void);
+        void produit_inf_reapro(void);
+        void achat_total_client(void);
+        void articles_plus_vendus(void);
+        void articles_moins_vendu(void);
+        void valeur_commerciale_stock(void);
+        void valeur_achat_stock(void);
+        void variations_valeur_commerciale(void); 
+};  
 
